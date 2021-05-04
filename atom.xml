@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lcyzsdh.github.io</id>
     <title>lcyzsdh的个人博客</title>
-    <updated>2021-05-04T09:14:47.636Z</updated>
+    <updated>2021-05-04T15:07:23.864Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lcyzsdh.github.io"/>
     <link rel="self" href="https://lcyzsdh.github.io/atom.xml"/>
@@ -10,4 +10,16 @@
     <logo>https://lcyzsdh.github.io/images/avatar.png</logo>
     <icon>https://lcyzsdh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, lcyzsdh的个人博客</rights>
+    <entry>
+        <title type="html"><![CDATA[我的第一篇blog(with Gridea)]]></title>
+        <id>https://lcyzsdh.github.io/post/wo-de-di-yi-pian-blogwith-gridea/</id>
+        <link href="https://lcyzsdh.github.io/post/wo-de-di-yi-pian-blogwith-gridea/">
+        </link>
+        <updated>2021-05-04T13:32:01.000Z</updated>
+        <content type="html"><![CDATA[<p>很早以前就有想写博客的念头，因为时间不够，所以一直没有实现。趁着这次休息，完成了博客的搭建，以此发文纪念。</p>
+<p>这个博客主要写在电脑方面的一些知识，心得，一做记录，二为分享。</p>
+<p>本博客托管在github上的gitpages，在Gridea上写作。</p>
+<p>欢迎收藏本博客：https://lcyzsdh.github.io</p>
+]]></content>
+    </entry>
 </feed>
