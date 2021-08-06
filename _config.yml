@@ -5,8 +5,8 @@
 # Site
 title: lcyzsdh-博客here
 subtitle: 'lcyzsdh的个人博客'
-description: 'lcyzsdh的个人博客,计算机技术，生活'
-keywords:
+description: '有智而性缓者斯大智，有才而气和者定为大才'
+keywords: 计算机,技术,生活,编程
 author: lcyzsdh
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -14,7 +14,10 @@ timezone: 'Asia/Shanghai'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://lcyzsdh.github.io/
-permalink: :year/:month/:title/
+permalink: posts/:abbrlink.html
+abbrlink:
+  alg: crc32
+  rep: dec
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -97,7 +100,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
