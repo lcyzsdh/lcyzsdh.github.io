@@ -2,7 +2,7 @@
 title: lcyzsdh的全新个人博客!
 tags:
   - hexo
-  - butterfly
+  - but
   - 博客
 description: 全新的个人博客
 abbrlink: 789985800
