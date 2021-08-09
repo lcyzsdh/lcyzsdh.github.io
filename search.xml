@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>PicGo:构建自己的免费图床</title>
+      <link href="/posts/3034106445.html"/>
+      <url>/posts/3034106445.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0 写在前面"></a>0 写在前面</h2><p>因为个人写博客的需要，文章中需要插入大量的图片。之前尝试过手动上传到GitHub和Gitee等方法，但还是太麻烦。最近，了解到了<code>PicGo</code>图床工具，且能够搭配Typora使用，还支持上传到以前在使用的<code>SM.MS</code>图床网站，操作简单易用。下面简单地介绍一下PicGo。</p><h2 id="1-PicGo的下载"><a href="#1-PicGo的下载" class="headerlink" title="1 PicGo的下载"></a>1 PicGo的下载</h2><blockquote><p>支持平台:Linux,Mac OS,Windows</p><p>本体支持图床:SM.MS图床、腾讯云COS、微博图床、GitHub图床、七牛图床、Imgur图床、阿里云OSS、又拍云图床</p></blockquote><p><em>如需更多的图床可以自己寻找插件</em></p><p>PicGo下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> PicGo </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo+GitHub Pages个人博客完全搭建详细教程</title>
+      <link href="/posts/2628717197.html"/>
+      <url>/posts/2628717197.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0 写在前面"></a>0 写在前面</h2><p>历时1周，在翻阅了大大小小无数的教程之后，总算是完成了个人博客的搭建。现将个人经验总结分享如下，亦做为个人存档留底。因本人才疏学浅，如有错误，欢迎在评论区指正。</p><div class="note info simple"><p>本教程使用的Hexo版本为3.8.0，不同版本差别比较大，请留意使用的版本。</p></div><p><strong>本教程默认读者已学会使用git并且拥有一个GitHub账号，如果还不会请点击TODO</strong></p><p><strong>Hexo依赖于node.js，请先安装，如需详细教程请点击TODO</strong></p><h2 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1 安装Hexo"></a>1 安装Hexo</h2><h3 id="1-1-什么是Hexo"><a href="#1-1-什么是Hexo" class="headerlink" title="1.1  什么是Hexo?"></a>1.1  什么是Hexo?</h3><blockquote><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><p>引自<a href="https://hexo.io/zh-cn/docs/">Hexo官网</a></p></blockquote><h3 id="1-2-安装Hexo"><a href="#1-2-安装Hexo" class="headerlink" title="1.2 安装Hexo"></a>1.2 安装Hexo</h3><div class="note info simple"><p>必须先安装Git与node.js(建议版本≥12)</p></div><p>在命令行窗口中输入:</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>稍等片刻Hexo即可安装完成，安装之后在命令行输入<code>hexo -v</code>，如果可以正常显示版本信息，即为安装成功。</p><h2 id="2-配置Hexo"><a href="#2-配置Hexo" class="headerlink" title="2 配置Hexo"></a>2 配置Hexo</h2><h3 id="2-1-初始化博客目录"><a href="#2-1-初始化博客目录" class="headerlink" title="2.1 初始化博客目录"></a>2.1 初始化博客目录</h3><p>首先新建一个文件夹<code>myblog</code>(名称随意,以下统称博客目录为<code>myblog</code>)，然后在当前目录下打开命令行(Windows按住Shift右键)，输入：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><p>等两步安装完成后，可以看到<code>myblog</code>文件夹下包含下列文件(其他文件基本不会去修改)：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_config.yml    #博客配置文件</span><br><span class="line">package.json   #项目配置文件</span><br><span class="line">scaffolds/     #模板目录</span><br><span class="line">source/        #文章目录</span><br><span class="line">themes/        #主题目录</span><br><span class="line">node_modules/  #插件目录</span><br></pre></td></tr></table></figure><p>现在，你已经拥有了一个简单的博客站点。接下来，在命令行中输入：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>稍等片刻等网站渲染完成，目录下生成的<code>public</code>文件夹就是静态站点目录。在浏览器中输入<code>localhost:4000</code>，即可查看到博客页面啦(虽然Hexo自带的主题真的很丑)。</p><h3 id="2-2-简单配置Hexo"><a href="#2-2-简单配置Hexo" class="headerlink" title="2.2 简单配置Hexo"></a>2.2 简单配置Hexo</h3><p>然而，现在的博客实际上还是空空如也，我们需要加入个性化的内容。</p><p>打开<code>myblog</code>下的<code>_config.yml</code>文件,修改最前面的部分:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="comment">#网站名称</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="comment">#网站副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="comment">#网站描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="comment">#关键词</span></span><br><span class="line"><span class="attr">author:</span> <span class="comment">#作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span> <span class="comment">#语言</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span> <span class="comment">#时区</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="comment">#你的网站的域名</span></span><br></pre></td></tr></table></figure><p><code>_config.yml</code>更多参数修改请参照<a href="https://hexo.io/zh-cn/docs/configuration">官方文档</a>，但一般没有必要修改。</p><p>如果你想要使用别的主题，可以在网上寻找Hexo的主题自行更换。本博客使用的主题为butterfly主题，TODO</p><h3 id="2-3-为博客添加文章"><a href="#2-3-为博客添加文章" class="headerlink" title="2.3 为博客添加文章"></a>2.3 为博客添加文章</h3><p>在博客目录，输入：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [post] name</span><br></pre></td></tr></table></figure><p>其中，<code>[post]</code>为默认文章模板，可在<code>scaffolds/</code>文件夹中修改。</p><p>然后就可以在<code>source/_post</code>中找到新生成的文章开始愉快的写作啦！</p><h2 id="3-将博客同步到GitHub并开启gh-pages"><a href="#3-将博客同步到GitHub并开启gh-pages" class="headerlink" title="3  将博客同步到GitHub并开启gh-pages"></a>3  将博客同步到GitHub并开启gh-pages</h2><div class="note info simple"><p>请确认已配置GitHub上的ssh key，如果没有请点击TODO</p></div><p>众所周知，GitHub是最流行的代码托管平台(<del>虽然访问速度是真的慢</del>)，而其中的gh-pages为每个人提供了一个免费的静态网站托管服务，非常适合用来搭建个人博客。</p><h3 id="3-1-将博客同步到GitHub"><a href="#3-1-将博客同步到GitHub" class="headerlink" title="3.1 将博客同步到GitHub"></a>3.1 将博客同步到GitHub</h3><p>下面提供两种管理代码的方案。</p><div class="tabs" id="3.1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#3.1-1">使用双分支管理(推荐)</button></li><li class="tab"><button type="button" data-href="#3.1-2">使用双仓库管理(适合有源码不公开需求的人)</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="3.1-1"><p>首先新建一个名为<code>username.github.io</code>的空仓库，<strong>其中username为你的github用户名</strong>。</p><p>在本地博客目录打开<code>.gitignore</code>(没有先创建一个)文件，写入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure><p>打开目录<code>themes/&lt;你的主题名称&gt;/</code>,找到<code>.git</code>文件夹将其删除，避免git将其认定为子项目不同步的情况。</p><p>然后，在本地博客目录运行以下命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#x27;new&#x27;</span><br><span class="line">git remote add github git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure><p><strong>记得将username修改成你自己的名称！</strong></p><p>测试是否配置成功，运行：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push github main</span><br></pre></td></tr></table></figure><p>如果成功的话，即可在GitHub上看到你的仓库代码了。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="3.1-2"><p>首先，在GitHub新建一个空仓库，将类型选择为私有(名称随意)。</p><p>然后新建一个名为<code>username.github.io</code>的空仓库，<strong>其中username为你的github用户名</strong>。</p><p>在本地博客目录打开<code>.gitignore</code>(没有先创建一个)文件，写入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public/</span><br><span class="line">node_modules/</span><br></pre></td></tr></table></figure><p>打开目录<code>themes/&lt;你的主题名称&gt;/</code>,找到<code>.git</code>文件夹将其删除，避免git将其认定为子项目不同步的情况。</p><p>然后，在本地博客目录运行以下命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#x27;new&#x27;</span><br><span class="line">git remote add github &lt;你的私有仓库的地址&gt;</span><br></pre></td></tr></table></figure><p>测试是否配置成功，运行：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push github main</span><br></pre></td></tr></table></figure><p>如果成功的话，即可在GitHub上看到你的私有仓库代码了。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h3 id="3-2-开启博客一键部署"><a href="#3-2-开启博客一键部署" class="headerlink" title="3.2 开启博客一键部署"></a>3.2 开启博客一键部署</h3><p>仍然提供两种方案。</p><div class="tabs" id="3.2"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#3.2-1">使用GitHub Actions部署</button></li><li class="tab"><button type="button" data-href="#3.2-2">使用Hexo插件部署</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="3.2-1"><p>todo</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="3.2-2"><p>todo</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h3 id="3-3-开启博客gh-pages服务"><a href="#3-3-开启博客gh-pages服务" class="headerlink" title="3.3 开启博客gh-pages服务"></a>3.3 开启博客gh-pages服务</h3><p>todo</p><p>好了，Hexo博客搭建的教程就到这里了，如果你想要为自己的博客更换主题的话，可以选择我使用的主题todo</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Butterfly </tag>
+            
+            <tag> gh-pages </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>lcyzsdh的全新个人博客!</title>
+      <link href="/posts/789985800.html"/>
+      <url>/posts/789985800.html</url>
+      
+        <content type="html"><![CDATA[<p><em>千里之行，始于足下</em></p><p>本博客创建于2021.8.4</p><p>​    自从接触计算机，已经有五六年时间了。从小白一路走到现在，有一些学习的经验，需要找到一个地方记录下来。网上的博客虽多，但终究没有自己搭建的使用便捷。趁暑期有空余时间，便诞生了此网站。</p><p>​    此博客上的文章除特殊说明外均为原创，内容主要包括计算机、生活，一为记录，二为分享。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

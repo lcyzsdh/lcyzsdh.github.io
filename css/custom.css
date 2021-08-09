@@ -1,0 +1,92 @@
+@font-face{
+    font-family: 'ziti' ;  /* 字体名自定义即可 */
+    src: url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap'); /* 字体文件路径 */
+    font-display : swap;
+  }
+  
+  h1#site-title {
+    font-family: 'dangao', sans-serif;
+  }
+/* 目录隐藏按钮颜色 */
+
+#toggle-sidebar {
+  color: #e58a8a !important;
+}
+
+/* 版权链接去掉下划线 */
+
+.layout_post .post-copyright .post-copyright-info a {
+  text-decoration: none;
+}
+/* 博主昵称颜色 */
+.author-info__name {
+  color: #ff7242;
+}
+/*页脚自定义字段字体颜色*/
+/* 也就是配置文件里的footer_custom_text */
+.footer_custom_text {
+  color: #8a8a32;
+}
+/* 滚动条 */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e58a8a;
+  background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #e58a8a;
+}
+/* 页脚透明 */
+#footer{
+  background: transparent!important;
+}
+/*夜间模式伪类遮罩层透明*/
+[data-theme="dark"]
+  #footer::before{
+      background: transparent!important;
+    }
+[data-theme="dark"]
+  #page-header::before{
+    background: transparent!important;
+    }
+
+    /* 首页文章卡片 */
+#recent-posts > .recent-post-item{
+  background:rgba(255, 255, 255, 0.9);
+}
+/* 首页侧栏卡片 */
+.card-widget{
+background:rgba(255, 255, 255, 0.9)!important;
+}
+/* 文章页面正文背景 */
+div#post{
+background: rgba(255, 255, 255, 0.9);
+}
+/* 分页页面 */
+div#page{
+background: rgba(255, 255, 255, 0.9);
+}
+/* 归档页面 */
+div#archive{
+background: rgba(255, 255, 255, 0.9);
+}
+/* 标签页面 */
+div#tag{
+background: rgba(255, 255, 255, 0.9);
+}
+/* 分类页面 */
+div#category{
+background: rgba(255, 255, 255, 0.9);
+}
