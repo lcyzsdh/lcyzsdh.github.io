@@ -1,9 +1,10 @@
 ---
+
 title: Hexo+GitHub Pages个人博客完全搭建详细教程
 description: 使用Hexo与GitHub Pages搭建个人博客
 tags:
-  - hexo
-  - butterfly
+  - Hexo
+  - Butterfly
   - 博客
   - gh-pages
 abbrlink: 2628717197
@@ -39,7 +40,7 @@ updated: 2021-08-08 17:57:35
 
 在命令行窗口中输入:
 
-```
+```cmd
 npm install -g hexo-cli
 ```
 
@@ -51,7 +52,7 @@ npm install -g hexo-cli
 
 首先新建一个文件夹`myblog`(名称随意,以下统称博客目录为`myblog`)，然后在当前目录下打开命令行(Windows按住Shift右键)，输入：
 
-```
+```cmd
 hexo init
 npm install
 ```
@@ -69,7 +70,7 @@ node_modules/  #插件目录
 
 现在，你已经拥有了一个简单的博客站点。接下来，在命令行中输入：
 
-```
+```cmd
 hexo generate
 hexo server
 ```
@@ -101,9 +102,120 @@ url: #你的网站的域名
 
 如果你想要使用别的主题，可以在网上寻找Hexo的主题自行更换。本博客使用的主题为butterfly主题，TODO
 
-## 3  将博客同步到GitHub
+### 2.3 为博客添加文章
+
+在博客目录，输入：
+
+```cmd
+hexo new [post] name
+```
+
+其中，`[post]`为默认文章模板，可在`scaffolds/`文件夹中修改。
+
+然后就可以在`source/_post`中找到新生成的文章开始愉快的写作啦！
+
+## 3  将博客同步到GitHub并开启gh-pages
 
 {% note info simple %}
 请确认已配置GitHub上的ssh key，如果没有请点击TODO
 {% endnote %}
 
+众所周知，GitHub是最流行的代码托管平台(~~虽然访问速度是真的慢~~)，而其中的gh-pages为每个人提供了一个免费的静态网站托管服务，非常适合用来搭建个人博客。
+
+### 3.1 将博客同步到GitHub
+
+下面提供两种管理代码的方案。
+
+{% tabs 3.1 %}
+<!-- tab 使用双分支管理(推荐) -->
+首先新建一个名为`username.github.io`的空仓库，**其中username为你的github用户名**。
+
+在本地博客目录打开`.gitignore`(没有先创建一个)文件，写入：
+
+```.gitignore
+public/
+node_modules/
+```
+
+打开目录`themes/<你的主题名称>/`,找到`.git`文件夹将其删除，避免git将其认定为子项目不同步的情况。
+
+然后，在本地博客目录运行以下命令：
+
+```cmd
+git init
+git add .
+git commit -m 'new'
+git remote add github git@github.com:username/username.github.io.git
+```
+
+**记得将username修改成你自己的名称！**
+
+测试是否配置成功，运行：
+
+```cmd
+git push github main
+```
+
+如果成功的话，即可在GitHub上看到你的仓库代码了。
+
+<!-- endtab -->
+
+<!-- tab 使用双仓库管理(适合有源码不公开需求的人) -->
+首先，在GitHub新建一个空仓库，将类型选择为私有(名称随意)。
+
+然后新建一个名为`username.github.io`的空仓库，**其中username为你的github用户名**。
+
+在本地博客目录打开`.gitignore`(没有先创建一个)文件，写入：
+
+```.gitignore
+public/
+node_modules/
+```
+
+打开目录`themes/<你的主题名称>/`,找到`.git`文件夹将其删除，避免git将其认定为子项目不同步的情况。
+
+然后，在本地博客目录运行以下命令：
+
+```cmd
+git init
+git add .
+git commit -m 'new'
+git remote add github <你的私有仓库的地址>
+```
+
+测试是否配置成功，运行：
+
+```cmd
+git push github main
+```
+
+如果成功的话，即可在GitHub上看到你的私有仓库代码了。
+
+<!-- endtab -->
+{% endtabs %}
+
+### 3.2 开启博客一键部署
+
+仍然提供两种方案。
+
+{% tabs 3.2 %}
+
+<!-- tab 使用GitHub Actions部署 -->
+
+todo
+
+<!-- endtab -->
+
+<!-- tab 使用Hexo插件部署 -->
+
+todo
+
+<!-- endtab -->
+
+{% endtabs %}
+
+### 3.3 开启博客gh-pages服务
+
+todo
+
+好了，Hexo博客搭建的教程就到这里了，如果你想要为自己的博客更换主题的话，可以选择我使用的主题todo
